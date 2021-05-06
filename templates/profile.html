@@ -6,13 +6,13 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="box m-auto">
-				<form action="" method="POST">
-					{{form|crispy}}
-					{% csrf_token %}
-					{# <input type="hidden" value="{{ next }}"> #}
-					<input type="submit" value="Login">
-				</form>
-			</div>
+					<ul class="nav">
+						<li class="nav-item">Usrname :{{request.user.username}}</li>
+						<li class="nav-item">First Name:{{request.user.first_name}}</li>
+						<li class="nav-item">Last Name:{{request.user.last_name}}</li>
+						<li class="nav-item">Email:{{request.user.email}}</li>
+					</ul>
+				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="box w-75 m-auto">

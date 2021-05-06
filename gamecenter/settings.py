@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'game',
     'accounts',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -111,7 +112,7 @@ LOGIN_REDIRECT_URL = '/' #kirish amalga oshganda
 LOGOUT_URL = '/accounts/logout/'
 LOGOUT_REDIRECT_URL = '/accounts/login/' #chqish amalga oshganda
 
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
