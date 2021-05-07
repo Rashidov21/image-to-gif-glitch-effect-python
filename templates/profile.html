@@ -6,12 +6,30 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="box m-auto">
-					<ul class="nav">
-						<li class="nav-item">Usrname :{{request.user.username}}</li>
-						<li class="nav-item">First Name:{{request.user.first_name}}</li>
-						<li class="nav-item">Last Name:{{request.user.last_name}}</li>
-						<li class="nav-item">Email:{{request.user.email}}</li>
+					<ul class="list-group">
+					  <li class="list-group-item active"><h4>Username : {{request.user.username}}</h4></li>
+					  <li class="list-group-item"><h4>First Name ; {{request.user.first_name}}</h4></li>
+					  <li class="list-group-item"><h4>Last Name ; {{request.user.last_name}}</h4></li>
+					   <li class="list-group-item"><h4>Email ; {{request.user.email}}</h4></li>
 					</ul>
+
+				</div>
+				<div class="mt-5">
+					<button onclick="Show()" class="btn btn-success btn-md">Edit Profile</button>
+				</div>
+				<div class="mt-5" id="edit" style="display:none;">
+					<form action="" method="POST">
+						{{form|crispy}}
+						{% csrf_token %}
+						<div class="row">
+							<div class="col-sm-6">
+								<input type="submit" class="btn btn-success btn-md" value="Update">
+							</div>
+							<div class="col-sm-6">
+								<button class="btn btn-danger btn-md" onclick="Hide()"> Close</button>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -23,5 +41,12 @@
 	
 	</div>
 
-	
+	<script>
+		function Show(argument) {
+			document.querySelector('#edit').style = 'display:block;'
+		}
+		function Hide(argument) {
+			document.querySelector('#edit').style = 'display:none;'
+		}
+	</script>
 {% endblock content %}

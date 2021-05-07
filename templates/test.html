@@ -1,0 +1,23 @@
+{% extends 'wrapper.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="mt-5 mb-5">
+				<form action="" method="POST">
+					{% csrf_token %}
+					{{form|crispy}}
+					<input type="submit" value="Create Post" class="btn btn-success btn-md">
+				</form>
+			</div>
+		</div>
+			<div class="col-md-6">
+				<div class="box m-auto">
+					<img src="/static/images/2.jpg" style="width:50%;" alt="">
+				</div>
+			</div>
+	</div>
+</div>
+
+{% endblock %}
