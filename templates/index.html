@@ -70,46 +70,13 @@
 			<div class="wrap">	
 			<div class="main">
 				<ul id="og-grid" class="og-grid">
+					{% for game in games %}				
 					<li>
-						<a href="#" data-largesrc="/static/images/1.jpg" data-title="Subway Surfers" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="/static/images/thumbs/1.jpg" alt="img01"/>
+						<a href="#" data-largesrc="{{game.image.url}}" data-title="{{game.title}}" data-description="{{game.info}}">
+							<img class="img-responsive" src="{{game.image.url}}" alt="{{game.title}}"/>
 						</a>
 					</li>
-					<li>
-						<a href="#" data-largesrc="/static/images/2.jpg" data-title="Angry Birds" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="/static/images/thumbs/2.jpg" alt="img02"/>
-						</a>
-					</li>
-					<li>
-						<a href="#" data-largesrc="/static/images/3.jpg" data-title="Bike Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="/static/images/thumbs/3.jpg" alt="img03"/>
-						</a>
-					</li>
-					<li>
-						<a href="#" data-largesrc="/static/images/4.jpg" data-title="Temple Run"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="/static/images/thumbs/4.jpg" alt="img01"/>
-						</a>
-					</li>
-					<li>
-						<a href="#" data-largesrc="/static/images/5.jpg" data-title="Car Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="/static/images/thumbs/5.jpg" alt="img01"/>
-						</a>
-					</li>
-					<li>
-						<a href="#" data-largesrc="/static/images/6.jpg" data-title="Fite Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="/static/images/thumbs/6.jpg" alt="img02"/>
-						</a>
-					</li>
-					<li>
-						<a href="#" data-largesrc="/static/images/7.jpg" data-title="Fite Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="/static/images/thumbs/7.jpg" alt="img03"/>
-						</a>
-					</li>
-					<li>
-						<a href="#" data-largesrc="/static/images/8.jpg" data-title="Panda Game" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="/static/images/thumbs/8.jpg" alt="img01"/>
-						</a>
-					</li>
+					{% endfor %}
 					 <div class="clearfix"> </div>
 					</ul>
 				</div>
@@ -122,49 +89,24 @@
 			});
 		</script>
 	</div>
-		<!----->
-		<div class="col-mn">
-			<div class="container">
-					<div class="col-mn2">
-						<h3>The Best Features</h3>
-						<p>Contrary to popular belief
-							, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-						<a class=" more-in" href="single.html">Read More</a>
-				</div>
-			</div>
-		</div>
-		<!---->
+
 		<div class="featured">
 			<div class="container">
 				<div class="col-md-4 latest">
 					<h4>Latest</h4>
+					{% for game in games %}
 					<div class="late">
-						<a href="single.html" class="fashion"><img class="img-responsive " src="/static/images/la.jpg" alt=""></a>
+						<a href="#" class="fashion">
+							<img class="img-responsive " src="{{game.image.url}}" alt="">
+						</a>
 						<div class="grid-product">
-							<span>6 Apr, 2015</span>
-							<p><a href="single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-							<a class="comment" href="single.html"><i> </i> 0 Comments</a>
+							<span>{{game.year}}</span>
+							<p><a href="single.html"> {{game.title}}</a></p>
+							<a class="comment" href="#"><i> </i> 0 Comments</a>
 						</div>
 					<div class="clearfix"> </div>
 					</div>
-					<div class="late">
-						<a href="single.html" class="fashion"><img class="img-responsive " src="/static/images/la1.jpg" alt=""></a>
-						<div class="grid-product">
-							<span>6 Apr, 2015</span>
-							<p><a href="single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-							<a class="comment" href="single.html"><i> </i> 0 Comments</a>
-						</div>
-					<div class="clearfix"> </div>
-					</div>
-					<div class="late">
-						<a href="single.html" class="fashion"><img class="img-responsive " src="/static/images/la2.jpg" alt=""></a>
-						<div class="grid-product">
-							<span>6 Apr, 2015</span>
-							<p><a href="single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-							<a class="comment" href="single.html"><i> </i> 0 Comments</a>
-						</div>
-					<div class="clearfix"> </div>
-					</div>
+					{% endfor %}
 				</div>
 				<div class="col-md-4 latest">
 					<h4>Featured</h4>

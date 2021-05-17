@@ -15,8 +15,7 @@ class RegisterForm(UserCreationForm):
 class ProfileUpdateForm(forms.ModelForm):
 	class Meta:
 		model = UserProfile
-		fields = '__all__'
-		exclude = ('user',)
+		fields = ['image', 'address', 'brth']
 		widgets = {
 			
 		}

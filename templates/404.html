@@ -1,13 +1,16 @@
 <!DOCTYPE html>
+{% load static %}
+{% block content %}
+
 <html>
 <head>
 <title>Games Center | 404</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
 <!-- Custom Theme files -->
 <!--theme-style-->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />	
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -49,15 +52,15 @@
 
 			</div>
 		<div class="top-nav">		
-			  <span class="menu"><img src="images/menu.png" alt=""> </span>
+			  <span class="menu"><img src="/static/images/menu.png" alt=""> </span>
 				
-					<ul>
-						<li class="active"><a class="color1" href="index.html"  >Home</a></li>
-						<li><a class="color2" href="games.html"  >Games</a></li>
-						<li><a class="color3" href="reviews.html"  >Reviews</a></li>
-						<li><a class="color4" href="404.html" >News</a></li>
-						<li><a class="color5" href="blog.html"  >Blog</a></li>
-						<li><a class="color6" href="contact.html" >Contact</a></li>
+						<ul>
+						<li class="active"><a class="color1" href="{% url 'game:homePage' %}"  >Home</a></li>
+						<li><a class="color2" href="{% url 'game:games' %}"  >Games</a></li>
+						<li><a class="color3" href="{% url 'game:reviews' %}"  >Reviews</a></li>
+						<li><a class="color4" href="{% url 'game:news' %}" >News</a></li>
+						<li><a class="color5" href="{% url 'game:blog' %}"  >Blog</a></li>
+						<li><a class="color6" href="{% url 'game:contact' %}" >Contact</a></li>
 						<div class="clearfix"> </div>
 					</ul>
 
@@ -83,7 +86,7 @@
 		<div class="container">	
 			<p>OOPS! - Could not Find it</p>	
 			<h2>404</h2>
-			<a href="index.html" class="more">Go Back </a>
+			<a href="{% url 'game:homePage' %}" class="more">Go Back </a>
 		</div>
 	</div>
 	<!---->
@@ -134,3 +137,4 @@
 
 </body>
 </html>
+{% endblock %}

@@ -55,16 +55,16 @@
 			</div>
 		<div class="top-nav">		
 			  <span class="menu"><img src="images/menu.png" alt=""> </span>
-				
-					<ul>
-						<li class="active"><a class="color1" href="index.html"  >Home</a></li>
-						<li><a class="color2" href="games.html"  >Games</a></li>
-						<li><a class="color3" href="reviews.html"  >Reviews</a></li>
-						<li><a class="color4" href="404.html" >News</a></li>
-						<li><a class="color5" href="blog.html"  >Blog</a></li>
-						<li><a class="color6" href="contact.html" >Contact</a></li>
-						<div class="clearfix"> </div>
-					</ul>
+					
+			  <ul>
+				<li class="active"><a class="color1" href="{% url 'game:homePage' %}"  >Home</a></li>
+				<li><a class="color2" href="{% url 'game:games' %}"  >Games</a></li>
+				<li><a class="color3" href="{% url 'game:reviews' %}"  >Reviews</a></li>
+				<li><a class="color4" href="{% url 'game:news' %}" >News</a></li>
+				<li><a class="color5" href="{% url 'game:blog' %}"  >Blog</a></li>
+				<li><a class="color6" href="{% url 'game:contact' %}" >Contact</a></li>
+				<div class="clearfix"> </div>
+			</ul>
 
 					<!--script-->
 				<script>

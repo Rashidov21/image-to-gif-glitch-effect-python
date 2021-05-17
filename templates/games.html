@@ -1,13 +1,15 @@
 <!DOCTYPE html>
+{% load static %}
+{% block content %}
 <html>
 <head>
 <title>Games Center | Games</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
 <!-- Custom Theme files -->
 <!--theme-style-->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />	
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -16,7 +18,7 @@
 <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 <!--//fonts-->
 <script src="js/modernizr.custom.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/component.css' %}" />
 </head>
 <body> 
 <!--header-->	
@@ -50,18 +52,16 @@
 				<h1><a href="index.html"><span>G</span>ames <span>C</span>enter</a></h1>
 			</div>
 		<div class="top-nav">		
-			  <span class="menu"><img src="images/menu.png" alt=""> </span>
-				
-					<ul>
-						<li class="active"><a class="color1" href="index.html"  >Home</a></li>
-						<li><a class="color2" href="games.html"  >Games</a></li>
-						<li><a class="color3" href="reviews.html"  >Reviews</a></li>
-						<li><a class="color4" href="404.html" >News</a></li>
-						<li><a class="color5" href="blog.html"  >Blog</a></li>
-						<li><a class="color6" href="contact.html" >Contact</a></li>
+			  <span class="menu"><img src="/static/images/menu.png" alt=""> </span>
+						<ul>
+						<li class="active"><a class="color1" href="{% url 'game:homePage' %}"  >Home</a></li>
+						<li><a class="color2" href="{% url 'game:games' %}"  >Games</a></li>
+						<li><a class="color3" href="{% url 'game:reviews' %}"  >Reviews</a></li>
+						<li><a class="color4" href="{% url 'game:news' %}" >News</a></li>
+						<li><a class="color5" href="{% url 'game:blog' %}"  >Blog</a></li>
+						<li><a class="color6" href="{% url 'game:contact' %}" >Contact</a></li>
 						<div class="clearfix"> </div>
 					</ul>
-
 					<!--script-->
 				<script>
 					$("span.menu").click(function(){
@@ -87,63 +87,63 @@
 			<div class="main">
 				<ul id="og-grid" class="og-grid">
 					<li>
-						<a href="#" data-largesrc="images/1.jpg" data-title="Subway Surfers" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="images/thumbs/1.jpg" alt="img01"/>
+						<a href="#" data-largesrc="/static/images/1.jpg" data-title="Subway Surfers" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
+							<img class="img-responsive" src="/static/images/thumbs/1.jpg" alt="img01"/>
 						</a>
 					</li>
 					<li>
-						<a href="#" data-largesrc="images/2.jpg" data-title="Angry Birds" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="images/thumbs/2.jpg" alt="img02"/>
+						<a href="#" data-largesrc="/static/images/2.jpg" data-title="Angry Birds" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
+							<img class="img-responsive" src="/static/images/thumbs/2.jpg" alt="img02"/>
 						</a>
 					</li>
 					<li>
-						<a href="#" data-largesrc="images/3.jpg" data-title="Bike Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="images/thumbs/3.jpg" alt="img03"/>
+						<a href="#" data-largesrc="/static/images/3.jpg" data-title="Bike Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
+							<img class="img-responsive" src="/static/images/thumbs/3.jpg" alt="img03"/>
 						</a>
 					</li>
 					<li>
-						<a href="#" data-largesrc="images/4.jpg" data-title="Temple Run"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="images/thumbs/4.jpg" alt="img01"/>
+						<a href="#" data-largesrc="/static/images/4.jpg" data-title="Temple Run"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
+							<img class="img-responsive" src="/static/images/thumbs/4.jpg" alt="img01"/>
 						</a>
 					</li>
 					<li>
-						<a href="#" data-largesrc="images/5.jpg" data-title="Car Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="images/thumbs/5.jpg" alt="img01"/>
+						<a href="#" data-largesrc="/static/images/5.jpg" data-title="Car Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
+							<img class="img-responsive" src="/static/images/thumbs/5.jpg" alt="img01"/>
 						</a>
 					</li>
 					<li>
-						<a href="#" data-largesrc="images/6.jpg" data-title="Fite Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="images/thumbs/6.jpg" alt="img02"/>
+						<a href="#" data-largesrc="/static/images/6.jpg" data-title="Fite Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
+							<img class="img-responsive" src="/static/images/thumbs/6.jpg" alt="img02"/>
 						</a>
 					</li>
 					<li>
-						<a href="#" data-largesrc="images/7.jpg" data-title="Fite Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="images/thumbs/7.jpg" alt="img03"/>
+						<a href="#" data-largesrc="/static/images/7.jpg" data-title="Fite Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
+							<img class="img-responsive" src="/static/images/thumbs/7.jpg" alt="img03"/>
 						</a>
 					</li>
 					<li>
-						<a href="#" data-largesrc="images/8.jpg" data-title="Panda Game" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="images/thumbs/8.jpg" alt="img01"/>
+						<a href="#" data-largesrc="/static/images/8.jpg" data-title="Panda Game" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
+							<img class="img-responsive" src="/static/images/thumbs/8.jpg" alt="img01"/>
 						</a>
 					</li>
 					<li>
-						<a href="#" data-largesrc="images/4.jpg" data-title="Temple Run"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="images/thumbs/4.jpg" alt="img01"/>
+						<a href="#" data-largesrc="/static/images/4.jpg" data-title="Temple Run"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
+							<img class="img-responsive" src="/static/images/thumbs/4.jpg" alt="img01"/>
 						</a>
 					</li>
 					<li>
-						<a href="#" data-largesrc="images/3.jpg" data-title="Bike Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="images/thumbs/3.jpg" alt="img03"/>
+						<a href="#" data-largesrc="/static/images/3.jpg" data-title="Bike Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
+							<img class="img-responsive" src="/static/images/thumbs/3.jpg" alt="img03"/>
 						</a>
 					</li>
 					<li>
-						<a href="#" data-largesrc="images/5.jpg" data-title="Car Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="images/thumbs/5.jpg" alt="img01"/>
+						<a href="#" data-largesrc="/static/images/5.jpg" data-title="Car Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
+							<img class="img-responsive" src="/static/images/thumbs/5.jpg" alt="img01"/>
 						</a>
 					</li>
 					<li>
-						<a href="#" data-largesrc="images/1.jpg" data-title="Subway Surfers" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="images/thumbs/1.jpg" alt="img01"/>
+						<a href="#" data-largesrc="/static/images/1.jpg" data-title="Subway Surfers" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
+							<img class="img-responsive" src="/static/images/thumbs/1.jpg" alt="img01"/>
 						</a>
 					</li>
 					 <div class="clearfix"> </div>
@@ -151,7 +151,7 @@
 				</div>
 			</div>
 		</div>
-<script src="js/grid.js"></script>
+<script src="{% static 'js/grid.js' %}"></script>
 		<script>
 			$(function() {
 				Grid.init();
@@ -206,3 +206,4 @@
 
 </body>
 </html>
+{% endblock %}

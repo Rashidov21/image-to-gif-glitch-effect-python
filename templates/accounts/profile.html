@@ -6,12 +6,22 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="box m-auto">
-					<ul class="list-group">
-					  <li class="list-group-item active"><h4>Username : {{request.user.username}}</h4></li>
-					  <li class="list-group-item"><h4>First Name ; {{request.user.first_name}}</h4></li>
-					  <li class="list-group-item"><h4>Last Name ; {{request.user.last_name}}</h4></li>
-					   <li class="list-group-item"><h4>Email ; {{request.user.email}}</h4></li>
-					</ul>
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="m-auto">
+								<img src="request.user.user_profile.image.url" alt="">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<ul class="list-group">
+							  <li class="list-group-item active"><h4>Username : {{request.user.username}}</h4></li>
+							  <li class="list-group-item"><h4>First Name ; {{request.user.first_name}}</h4></li>
+							  <li class="list-group-item"><h4>Last Name ; {{request.user.last_name}}</h4></li>
+							   <li class="list-group-item"><h4>Email ; {{request.user.email}}</h4></li>
+							</ul>
+						</div>
+					</div>
+				
 
 				</div>
 				<div class="mt-5">
@@ -19,7 +29,7 @@
 				</div>
 				<div class="mt-5" id="edit" style="display:none;">
 					<form action="" method="POST">
-						{{form|crispy}}
+						{{update_form|crispy}}
 						{% csrf_token %}
 						<div class="row">
 							<div class="col-sm-6">

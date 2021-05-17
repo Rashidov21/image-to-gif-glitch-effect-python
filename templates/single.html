@@ -1,13 +1,15 @@
 <!DOCTYPE html>
+{% load static %}
+{% block content %}
 <html>
 <head>
 <title>Games Center | Single</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
 <!-- Custom Theme files -->
 <!--theme-style-->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />	
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -45,22 +47,20 @@
 	<div class="container">
 		<div class="head-top">
 			<div class="logo">
-					<h1><a href="index.html"><span> G</span>ames <span>C</span>enter</a></h1>
+					<h1><a href="{% url 'game:index' %}"><span> G</span>ames <span>C</span>enter</a></h1>
 
 			</div>
 		<div class="top-nav">		
-			  <span class="menu"><img src="images/menu.png" alt=""> </span>
-				
-					<ul>
-						<li class="active"><a class="color1" href="index.html"  >Home</a></li>
-						<li><a class="color2" href="games.html"  >Games</a></li>
-						<li><a class="color3" href="reviews.html"  >Reviews</a></li>
-						<li><a class="color4" href="404.html" >News</a></li>
-						<li><a class="color5" href="blog.html"  >Blog</a></li>
-						<li><a class="color6" href="contact.html" >Contact</a></li>
+			  <span class="menu"><img src="/static/images/menu.png" alt=""> </span>
+						<ul>
+						<li class="active"><a class="color1" href="{% url 'game:homePage' %}"  >Home</a></li>
+						<li><a class="color2" href="{% url 'game:games' %}"  >Games</a></li>
+						<li><a class="color3" href="{% url 'game:reviews' %}"  >Reviews</a></li>
+						<li><a class="color4" href="{% url 'game:news' %}" >News</a></li>
+						<li><a class="color5" href="{% url 'game:blog' %}"  >Blog</a></li>
+						<li><a class="color6" href="{% url 'game:contact' %}" >Contact</a></li>
 						<div class="clearfix"> </div>
 					</ul>
-
 					<!--script-->
 				<script>
 					$("span.menu").click(function(){
@@ -81,7 +81,7 @@
 				<div class="single">
 					<div class="blog-to">		
 					
-						<img class="img-responsive sin-on" src="images/sin1.jpg" alt="" />
+						<img class="img-responsive sin-on" src="/static/images/sin1.jpg" alt="" />
 							<div class="blog-top">
 							<div class="blog-left">
 								<b>23</b>
@@ -127,7 +127,7 @@
 				<div class="media">
 				  <div class="media-left">
 					<a href="#">
-					  <img class="media-object" src="images/co.png" alt="">
+					  <img class="media-object" src="/static/images/co.png" alt="">
 					</a>
 				  </div>
 				  <div class="media-body">
@@ -139,7 +139,7 @@
 				<div class="media in-media">
 				  <div class="media-left">
 					<a href="#">
-					  <img class="media-object" src="images/co.png" alt="">
+					  <img class="media-object" src="/static/images/co.png" alt="">
 					</a>
 				  </div>
 				   <div class="media-body">
@@ -151,7 +151,7 @@
 				<div class="media">
 				  <div class="media-left">
 					<a href="#">
-					  <img class="media-object" src="images/co.png" alt="">
+					  <img class="media-object" src="/static/images/co.png" alt="">
 					</a>
 				  </div>
 				  <div class="media-body">
@@ -233,3 +233,4 @@
 
 </body>
 </html>
+{% endblock %}

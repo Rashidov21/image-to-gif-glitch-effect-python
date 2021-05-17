@@ -12,6 +12,8 @@
 						<h4>{{object.body}}</h4>
 						<hr>
 						<a href="{{post.pk}}" class="btn btn-success btn-md">Read more</a>
+						<br>
+						<a href="{{object.get_absolute_url}}" class="btn btn-success btn-md">Delete Post</a>
 					</li>
 			
 				</ul>
@@ -23,6 +25,8 @@
 						<h4>{{post.body}}</h4>
 						<hr>
 						<a href="{{post.pk}}" class="btn btn-success btn-md">Read more</a>
+						<br>
+						<a href="{{post.get_absolute_url}}" class="btn btn-success btn-md">Delete post</a>
 					</li>
 				{% endfor %}
 				</ul>
