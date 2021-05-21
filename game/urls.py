@@ -5,10 +5,8 @@ app_name = 'game'
 
 urlpatterns = [
 	path('', views.HomeView.as_view(), name='homePage'),
-	path('contact', views.contact, name='contact'),
-	path('games', views.games, name='games'),
-	path('reviews',views.reviews, name='reviews'),
-	path('news', views.news, name='news'),
-	path('blog',views.blog,name='blog'),
+	path('contact', views.ContactView.as_view(), name='contact'),
+	path('<slug:slug>/', views.GameDetailView.as_view(), name='detail'),
+
 	path('search', views.search, name='search')
 ]

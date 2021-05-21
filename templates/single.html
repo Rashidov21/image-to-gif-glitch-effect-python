@@ -47,18 +47,18 @@
 	<div class="container">
 		<div class="head-top">
 			<div class="logo">
-					<h1><a href="{% url 'game:index' %}"><span> G</span>ames <span>C</span>enter</a></h1>
+					<h1><a href=""><span> G</span>ames <span>C</span>enter</a></h1>
 
 			</div>
 		<div class="top-nav">		
 			  <span class="menu"><img src="/static/images/menu.png" alt=""> </span>
 						<ul>
 						<li class="active"><a class="color1" href="{% url 'game:homePage' %}"  >Home</a></li>
-						<li><a class="color2" href="{% url 'game:games' %}"  >Games</a></li>
-						<li><a class="color3" href="{% url 'game:reviews' %}"  >Reviews</a></li>
-						<li><a class="color4" href="{% url 'game:news' %}" >News</a></li>
-						<li><a class="color5" href="{% url 'game:blog' %}"  >Blog</a></li>
-						<li><a class="color6" href="{% url 'game:contact' %}" >Contact</a></li>
+						<li><a class="color2" href=""  >Games</a></li>
+						<li><a class="color3" href=""  >Reviews</a></li>
+						<li><a class="color4" href="" >News</a></li>
+						<li><a class="color5" href=""  >Blog</a></li>
+						<li><a class="color6" href="" >Contact</a></li>
 						<div class="clearfix"> </div>
 					</ul>
 					<!--script-->
@@ -81,20 +81,18 @@
 				<div class="single">
 					<div class="blog-to">		
 					
-						<img class="img-responsive sin-on" src="/static/images/sin1.jpg" alt="" />
+						<img class="img-responsive sin-on" src="{{object.image.url}}" alt="" />
 							<div class="blog-top">
 							<div class="blog-left">
 								<b>23</b>
 								<span>July</span>
 							</div>
 							<div class="top-blog">
-								<a class="fast" href="#">It is a long established fact that a reader will be distracted </a>
+								<a class="fast" href="#">{{object.title}} </a>
 								<p>Posted by <a href="#">Admin</a> in <a href="#">General</a> | <a href="#">10 Comments</a></p> 
-								<p class="sed">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500
-									 when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
-									 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500
-									 when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.</p> 
-									 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis. Donec et purus nec leo interdum sodales nec sit amet magna.</p>
+								<p class="sed">
+									{{object.info}}
+								</p>
 								<div class="col-md-6 md-in">
 						<ul class="grid-part">
 							<li><a href="#"><i class="sign"> </i>Sed ut perspiciatis unde omnis</a></li>

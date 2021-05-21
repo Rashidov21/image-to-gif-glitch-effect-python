@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Game
+from .models import Category, Game, Contact
 from django.utils.html import mark_safe
 
 # Register your models here.
@@ -30,3 +30,6 @@ class GameAdmin(admin.ModelAdmin):
 	ordering = ['-year']
 
 	prepopulated_fields = {'slug':('title',)}
+
+
+admin.site.register(Contact)

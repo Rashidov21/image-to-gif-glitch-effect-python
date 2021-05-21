@@ -30,8 +30,8 @@ class Game(models.Model):
 class Contact(models.Model):
 	name = models.CharField('Ismi', max_length=50)
 	email = models.EmailField('Emaili', max_length=200)
-	subject = models.TextField('subject', max_length=150)
-	message = models.CharField('Xabari', max_length=50)
+	subject = models.CharField('subject', max_length=150)
+	message = models.TextField('Xabari', max_length=50)
 
 	class Meta:
 		verbose_name = 'Aloqa'

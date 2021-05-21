@@ -1,6 +1,10 @@
 from django.shortcuts import render  
 from django.views.generic import ListView
+from django.views.generic.base import View
+from django.views.generic.detail import DetailView
 from django.db.models import Q
+
+from .forms import ContactForm
 
 from .models import Game
 # from .models import contact
@@ -22,19 +26,42 @@ class HomeView(ListView):
 
 	# def get(self, request):
 	# 	return render(request, 'index.html')
+# Upakovka
+# *args  = arguments => set()
+# **kwargs = keyword arguments => dict()
+
+class GameDetailView(DetailView):
+	model = Game
+	template_name = 'single.html'
+
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		return context
+
+# YourTable.phone => prefix => id_ == id_phone 
+
 
 # Create your views here.
-def contact(request):
-	if request.method == 'POST':
-		n = request.POST['name']
-		e = request.POST['email']
-		s = request.POST['subject']
-		m = request.POST['message']
-		contact.objects.create(name=n, email=e,subject=s, message=m,)
-		print('#'*50)
-	else:
-		print('error'*10)	
-	return render(request, 'contact.html')
+class ContactView(View):
+
+	def get(self,request):
+		form = ContactForm()
+		return render(request, 'contact.html', {'form':form})
+
+	def post(self, request):
+		form = ContactForm(request.POST)
+		if form.is_valid():
+			form.save()
+			print('*'*50)
+		else:
+			form = ContactForm()
+			print('#'*50)
+		return render(request, 'contact.html', {'form':form})
+
+
+
+
 
 
 def search (request):
@@ -50,18 +77,3 @@ def search (request):
 
 
 
-def games(request):
-
-	return render(request,'games.html')
-
-def news(request):
-
-	return render(request,'404.html')
-
-
-def blog(request):
-
-	return render(request,'blog.html')
-def reviews(request):
-
-	return  render(request,'reviews.html')
