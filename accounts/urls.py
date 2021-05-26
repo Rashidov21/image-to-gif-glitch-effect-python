@@ -10,7 +10,7 @@ urlpatterns = [
 	path('logout/', LogoutView.as_view(
 		template_name='accounts/logout.html'), name='logout'),
 	path('register/', views.register, name='register'),
-	path('profile/', views.user_profile, name='profile'),
+	path('profile/<int:pk>', views.UserProfile.as_view(), name='profile'),
 
 	path('create/post/', views.CreatePostView.as_view(template_name='test.html'), name='create'),
 	path('update/post/', views.UpdatePostView.as_view(), name='update'),

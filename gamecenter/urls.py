@@ -22,6 +22,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('game.urls', namespace='game')),
+    path('', include('social_django.urls', namespace='social')),
     path('accounts/', include('accounts.urls', namespace='accounts')),
 ]
 if settings.DEBUG:

@@ -34,7 +34,7 @@
 				{% if request.user.is_authenticated %}
 					<li>
 						<i class="fa fa-user"></i>
-						<a href="{% url 'accounts:profile' %}">
+						<a href="{% url 'accounts:profile' request.user.id %}">
 						{{request.user.username}}
 					</a>
 				</li>

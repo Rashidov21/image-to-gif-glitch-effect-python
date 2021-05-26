@@ -40,7 +40,18 @@ INSTALLED_APPS = [
     'game',
     'accounts',
     'crispy_forms',
+    # 'social_django',
 ]
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
+SOCIAL_AUTH_FACEBOOK_KEY = ''
+SOCIAL_AUTH_FACEBOOK_SECRET = ''
+
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+  'locale': 'ru_RU',
+  'fields': 'id, name, email, age_range'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

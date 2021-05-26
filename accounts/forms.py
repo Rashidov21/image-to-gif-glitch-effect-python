@@ -7,10 +7,8 @@ class RegisterForm(UserCreationForm):
 
 	class Meta:
 		model = User
-		fields = ["username","first_name",'last_name', "email", "password1", "password2"]
-		widgets = {
-			
-		}
+		fields = ("username","first_name",'last_name', "email", "password1", "password2")
+	
 
 class ProfileUpdateForm(forms.ModelForm):
 	class Meta:
@@ -19,3 +17,5 @@ class ProfileUpdateForm(forms.ModelForm):
 		widgets = {
 			
 		}
+	def save(self):
+		pass

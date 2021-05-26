@@ -1,6 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
-
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -9,6 +9,7 @@ from django.contrib.auth.models import User
 from .models import UserProfile
 from django.urls import reverse
 from django.views.generic import ListView, DetailView
+from django.views.generic.base import View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 # CRUD - Create , Update , Delete
@@ -56,19 +57,45 @@ class DetailPostView(DetailView):
 	template_name = 'posts.html'
 
 # Create your views here.
-def user_profile(request):
-	print(request.user.user_profile.__dir__())
-	if request.method == 'POST':
-		update_form = ProfileUpdateForm(request.POST)
-		if update_form.is_valid():
-			update_form.save()
-			print('*'*50)
-		else:
-			print('#'*50)
-	else:
-		update_form = ProfileUpdateForm()
-	# print(request.user.__dir__())
-	return render(request, 'accounts/profile.html', {'update_form':update_form})
+class UserProfile(LoginRequiredMixin,UpdateView):
+	model = UserProfile
+	fields = ['image', 'address','brth']
+	success_url = '/'
+	template_name = 'accounts/profile.html'
+
+	# def get(self,request):
+	# 	# if request.user.is_authenticated:
+	# 	# 	messages.success(request, "Siz ro'yxatdan o'tgansiz!")
+	# 	# 	return redirect('game:homePage')
+	# 	form = ProfileUpdateForm()
+	# 	context = {'form':form}
+	# 	return render(request, 'accounts/profile.html', context)
+
+	# def post(self,request):
+	# 	form = ProfileUpdateForm(request.POST)
+	# 	if form.is_valid():
+			
+	# 		try:
+	# 			u = request.user
+	# 			image = request.POST['image']
+	# 			address = request.POST['address']
+	# 			brth = request.POST['brth']
+	# 			use = UserProfile.objects.create(
+	# 				user=u,image=image, 
+	# 				address=address,brth=brth)
+
+	# 		except:
+	# 			use = None
+	# 		messages.success(request, 'Tabriklaymiz ' + u.first_name + '  siz muvaffiqiyatli ro\'yhatdan o\'tdingiz!')
+	# 		form.save()
+	# 		return redirect('game:homePage')
+	# 	else:
+	# 		form = ProfileUpdateForm()
+	# 	context = {'form':form}
+	# 	return render(request, 'accounts/profile.html', context)
+
+
+
 
 # class ProfileCreateView(CreateView):
 # 	model = UserProfile
@@ -82,10 +109,14 @@ def register(request):
 	if request.method == 'POST':
 		form = RegisterForm(request.POST)
 		if form.is_valid():
-			form.save()
-			u = User.objects.last()
-			UserProfile.objects.create(user=u)
-			return render(request, 'index.html')
+			u = form.save()
+			try:
+				user = UserProfile.objects.create(user=u)
+				user.save()
+			except:
+				user = None
+			return redirect('accounts:profile')
+
 	else:
 		form = RegisterForm()
 		print('$'*20)
