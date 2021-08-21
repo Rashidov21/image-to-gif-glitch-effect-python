@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="main.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <title>News Api</title>
+    <title>Movies Api</title>
 </head>
 <body>
 <main>
     <nav class="main">
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo center">News API</a>
+            <a href="#!" class="brand-logo center">Movies API</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="index.html">News</a></li>
@@ -28,44 +28,42 @@
 
     <ul class="sidenav" id="mobile-demo">
         <li><a href="movies.html">Movie API</a></li>
+        <li><a href="index.html">News API</a></li>
     </ul>
 </main>
 <div class="container">
+    <br><br>
+    <button class="btn" id="get">
+        <i class="fas fa-redo-alt"></i>
+    </button>
     <div class="row">
-        <div class="col s12 m9">
-            <div class="box">
-                <div class="row" style="margin-top: 10px;">
-                    <div class="col s6 m6">
-                        <form action="#">
-                            <div class="input-field col s12">
-                                <select>
-                                    <option value="" disabled selected>Country</option>
-                                    <option value="us">USA</option>
-                                    <option value="uz">UZB</option>
-                                    <option value="ru">RUS</option>
-                                </select>
-                                <label>Select your country</label>
-                            </div>
-                            <div class="input-field">
-                                <input id="search" type="search" placeholder="search" required>
-                            </div>
-                            <input type="submit" value="Search" class="btn">
-                        </form>
+        <div class="col s12 m9 card z-depth-3">
+            <br>
+            <div class="container" id="posts">
+                <div class="row">
+                    <div class="col s12 m6">
+                        <img id="poster" src="" alt="" class="responsive-img">
+                    </div>
+                    <div class="col s12 m6">
+                        <ul class="collection">
+                            <li class="collection-item">Title : <strong id="title"></strong></li>
+                            <li class="collection-item">Title : <strong id="actors"></strong></li>
+                            <li class="collection-item">Country : <strong id="country"></strong></li>
+                            <li class="collection-item">Director : <strong id="director"></strong></li>
+                            <li class="collection-item">Genre : <strong id="genre"></strong></li>
+                            <li class="collection-item">Year : <strong id="year"></strong></li>
+                            <li class="collection-item">Rating : <strong id="rating"></strong></li>
+                        </ul>
                     </div>
                 </div>
-
-            </div>
-            <div class="container" id="posts">
-                <div class="box"></div>
             </div>
         </div>
         <div class="col s12 m3">
-            <button id="addPost" class="btn orange">Add Post</button>
-            <button id="getPost" class="btn orange">Get Post</button>
+
         </div>
     </div>
 </div>
 
-<script src="news.js" ></script>
+<script src="movies.js" ></script>
 </body>
 </html>
