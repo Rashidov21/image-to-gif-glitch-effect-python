@@ -1,8 +1,6 @@
-
-
-let movies = ['tt0816692','tt0110413','tt0172495','tt1853728','tt1345836','tt0361748']
+let movies = ['tt0816692', 'tt0110413', 'tt0172495', 'tt1853728', 'tt1345836', 'tt0361748']
 let getMovieBtn = document.getElementById('get')
-// Informartion blocks
+    // Informartion blocks
 let poster = document.getElementById('poster')
 let title = document.getElementById('title')
 let actors = document.getElementById('actors')
@@ -15,13 +13,13 @@ let rating = document.getElementById('rating')
 
 
 
-function getMovie(){
+function getMovie() {
     let randomMovie = Math.floor(Math.random() * movies.length)
     let movie = movies[randomMovie]
     let url = `http://www.omdbapi.com/?i=${movie}&apikey=fb78af15`
     const xhr = new XMLHttpRequest();
     xhr.open('POST', url)
-    xhr.addEventListener('load', ()=>{
+    xhr.addEventListener('load', () => {
         const response = JSON.parse(xhr.responseText)
         poster.src = response.Poster;
         title.innerHTML = response.Title;
@@ -32,12 +30,13 @@ function getMovie(){
         year.innerHTML = response.Year;
         rating.innerHTML = response.imdbRating;
     });
-    xhr.addEventListener('error', ()=>{
+    // commnet
+    xhr.addEventListener('error', () => {
         console.log('error')
     });
     xhr.send();
 }
-getMovieBtn.addEventListener("click", ()=>{
+getMovieBtn.addEventListener("click", () => {
     getMovie()
 })
 fetch('https://dummyapi.io/data/v1/post?limit=10')
