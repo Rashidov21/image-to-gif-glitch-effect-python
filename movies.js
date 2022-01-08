@@ -10,7 +10,7 @@ let genre = document.getElementById('genre')
 let year = document.getElementById('year')
 let rating = document.getElementById('rating')
 
-
+// commnet
 
 
 function getMovie() {
